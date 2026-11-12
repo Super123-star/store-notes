@@ -1,0 +1,12 @@
+{
+  "name": "Мои магазины и заметки",
+  "short_name": "Мои магазины",
+  "description": "Личные заметки о магазинах и следующих визитах",
+  "lang": "ru",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f6f6fb",
+  "theme_color": "#5b4bdb",
+  "icons": []
+}

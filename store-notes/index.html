@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#5b4bdb">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Мои магазины">
+
+  <title>Мои магазины</title>
+  <link rel="manifest" href="./manifest.json">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <header class="top">
+    <div class="container">
+      <div class="eyebrow">Личные заметки</div>
+      <h1>Мои магазины</h1>
+      <p>Контакты, договорённости и даты следующих визитов.</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="panel reminders">
+      <h2>Ближайшие визиты</h2>
+      <div id="reminders"></div>
+    </section>
+
+    <section class="panel">
+      <h2>Добавить магазин</h2>
+      <form id="store-form" class="add-form">
+        <label>
+          Название магазина или имя человека
+          <input id="store-name" name="name" required maxlength="80"
+                 placeholder="Например, Цветочный магазин">
+        </label>
+
+        <label>
+          Адрес или телефон — необязательно
+          <input id="store-address" name="address" maxlength="160"
+                 placeholder="Например, улица Ленина, 10">
+        </label>
+
+        <button type="submit">Добавить</button>
+      </form>
+    </section>
+
+    <section>
+      <div class="section-heading">
+        <h2>Мои записи</h2>
+        <span id="store-count" class="muted"></span>
+      </div>
+
+      <div id="stores" class="store-list"></div>
+      <p id="empty-message" class="empty-message">
+        Пока магазинов нет. Добавьте первый магазин выше.
+      </p>
+    </section>
+
+    <section class="panel backup">
+      <h2>Резервная копия</h2>
+      <p>
+        Скачайте копию, чтобы не потерять записи. Для переноса на другой
+        телефон скачайте её здесь, а затем импортируйте на новом устройстве.
+      </p>
+      <div class="backup-buttons">
+        <button id="export-button" type="button" class="secondary">
+          Скачать копию
+        </button>
+
+        <label class="file-button secondary">
+          Загрузить копию
+          <input id="import-file" type="file" accept=".json,application/json">
+        </label>
+      </div>
+      <p id="backup-status" class="status" aria-live="polite"></p>
+    </section>
+
+    <footer>
+      Записи хранятся в браузере на этом устройстве.
+    </footer>
+  </main>
+
+  <script src="./app.js"></script>
+</body>
+</html>
